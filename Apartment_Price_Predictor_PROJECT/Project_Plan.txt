@@ -1,0 +1,11 @@
+Plan how to know and predict the price of an apartment in moscow by inputting the metro,land area,region;either in moscow region or moscow,building type
+
+Plan of execution:
+
+First the user will have to input the area,metro,region,building type and may be the number of rooms
+SO now i am done with the linear regression algorithm.I will have to create a website interface where a user can just input the metro they want,the size/area of the apartment they want,the type of apartment then the price of the apartment will then be displayed
+I will include the streamlit map interface to the final project
+
+SO WHAT SHOULD I ADD.
+
+I need to add a graph that will show the relationship between metro and the average price of an apartment in that metro
