@@ -41,7 +41,7 @@ st.markdown("<p style='text-align:center;'>An interactive machine learning app t
 st.divider()
 
 # --- LOAD DATA ---
-data = pd.read_csv("Data\data.csv")
+data = pd.read_csv("data\data.csv")
 data.dropna(inplace=True)
 
 # --- SIDEBAR INPUTS ---
