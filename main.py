@@ -41,7 +41,7 @@ st.markdown("<p style='text-align:center;'>An interactive machine learning app t
 st.divider()
 
 # --- LOAD DATA ---
-data = pd.read_csv(".\Apartment_Price_Predictor_PROJECT\Data\data.csv")
+data = pd.read_csv(".\Data\data.csv")
 data.dropna(inplace=True)
 
 # --- SIDEBAR INPUTS ---
