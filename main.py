@@ -149,7 +149,8 @@ with tab3:
 
     try:
         geolocator = Nominatim(user_agent="Apartment Price Predictor")
-        location = geolocator.geocode(metro)
+        location=f"{metro},Москва"
+        location = geolocator.geocode(location)
         if location:
             map_data = pd.DataFrame(
                 np.random.randn(len(filtered), 2) / [50, 50] + [location.latitude, location.longitude],
