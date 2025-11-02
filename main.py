@@ -85,13 +85,6 @@ with tab1:
         # --- Prediction ---
         predicted = lin_reg.predict_price(area, X_mean, X_std, Y_mean, Y_std)
 
-        # --- Display ---
-        st.success(f"🏢 Estimated Apartment Price: **{predicted:,.2f} ₽**")
-        st.metric("📏 Area (m²)", area)
-        st.metric("📍 Metro Station", metro)
-        st.metric("🏗️ Building Type", building_type)
-
-        # --- Loading Animation ---
         progress_text = st.empty()
         bar = st.progress(0)
         for i in range(100):
@@ -100,6 +93,17 @@ with tab1:
             progress_text.text(f"Analyzing market trends... {i+1}%")
 
         st.divider()
+
+        # --- Display ---
+        st.success(f"🏢 Estimated Apartment Price: **{predicted:,.2f} ₽**")
+        st.metric("📏 Area (m²)", area)
+        st.metric("📍 Metro Station", metro)
+        st.metric("🏗️ Building Type", building_type)
+
+        st.divider()
+
+        # --- Loading Animation ---
+
 
         # --- Loss Chart ---
         st.subheader("📉 Training Loss Curve")
@@ -165,21 +169,29 @@ with tab3:
 # --- TAB 4: ABOUT PROJECT ---
 with tab4:
     st.markdown("""
-        ### 🧠 About This Project
-        **Project Title:** Apartment Price Prediction  
-        **Developer:** *Muktar Sanusi*  
-        **Institution:** Moscow Aviation Institute (MAI)  
+    ### 🧠 About This Project
+    **Project Title:** Apartment Price Prediction  
+    **Developer:** *Muktar Sanusi*  
+    **Institution:** Moscow Aviation Institute (MAI)  
 
-        **Description:**  
-        This app uses a **custom Linear Regression algorithm** to estimate apartment prices based on area, metro proximity, and building type in Moscow.  
-        It is designed to demonstrate **data preprocessing**, **machine learning training**, and **geospatial visualization** in a real-estate context.
+    **Description:**  
+    This application employs a **custom Linear Regression algorithm** to estimate apartment prices in Moscow based on key parameters including area, metro proximity, and building type.  
+    The project demonstrates comprehensive **data preprocessing**, **machine learning model training**, and **geospatial visualization** techniques within a real estate analytics context.
 
-        **Key Features:**
-        - Real-time apartment price prediction  
-        - Interactive map of selected metro area  
-        - Data visualization and training loss plots  
-        - Downloadable prediction reports  
+    **Key Features:**
+    - Real-time apartment price prediction  
+    - Interactive geographical visualization of metro areas  
+    - Comprehensive data visualization and training metrics  
+    - Exportable prediction reports  
+
+    **Data Source & Acknowledgments**
+    - Primary dataset sourced from **Kaggle**: Moscow Housing Price Dataset
+    - Dataset comprises approximately 23,000 property records
+    - Special acknowledgment to the data contributor: Egor Kainov
+    
+    **Dataset Reference:**  
     """)
+st.link_button("Moscow Housing Price Dataset", "https://www.kaggle.com/datasets/egorkainov/moscow-housing-price-dataset/data")
 
 # --- FOOTER ---
 st.markdown("""
